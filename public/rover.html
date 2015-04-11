@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+    <link   rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/socketio-client/socket.io.js"></script>
+    <style> 
+     body {
+      /*background-color: #0071c5  */
+     }
+    </style>
+    <script>
+      var socket = io();
+      function forward()
+      {
+        socket.emit('forward');
+      }
+      function reverse()
+      {
+        socket.emit('reverse');
+      }
+      function stop()
+      {
+        socket.emit('stop');
+      }
+      function strafeLeft()
+      {
+        socket.emit('strafe-left');
+      }
+      function strafeRight()
+      {
+        socket.emit('strafe-right');
+      }
+      function intelBong()
+      {
+        socket.emit('intel-bong');
+      }
+      function dalek()
+      {
+        socket.emit('dalek');
+      }
+      
+    </script>
+</head>
+<p align="center"> Robodub Rover! </p>
+<!--  1280 x 800  -->
+<body>
+<div>
+  <div align="center">
+  <br>
+    <button type="button" onclick="forward()" >
+    <img src="up.png" alt="Up" height="200" id="up">
+    </button>
+  </div>
+  <div align="center">
+    <span>
+    <button type="button" onclick="strafe-left()">
+      <img src="images/left.png" alt="Right" height="200" id="left" style="padding-right:  ">
+    </button>
+    <button type="button" onclick="stop()">
+      <img src="images/stop.png" height="200" alt="stop">
+    </button>
+    <button type="button" onclick="strafe-right()">
+      <img src="images/right.png" alt="Right" height="200" align="" id="right" style="padding-left:  ">
+    </button>
+    </span>
+  </div>
+  <!--<br><br><br><br><br>-->
+  <div align="center">
+    <button type="button" onclick="reverse()">
+    <img src="images/down.png" alt="Right" height="200" id="down">
+    </button>
+    <br>
+    <button type="button" onclick="alert('Music')">
+    <img src="images/music.png" alt="music" height="200" id="music">
+    </button>
+    <button type="button" onclick="intelBong()">
+    <img src="images/bong.png" height="200" alt="bong">
+    </button>
+    <button type="button" onclick="dalek()">
+    <img src="images/dalek.png" height="200" alt="dalek">
+    </button>
+  </div>
+  
+</div>
+</body>
+<style>
+  body {background-color:#0071c5}
+  p   {color:blue;
+     font-size: 500%}
+  left {padding:50px}
+  button {background-color: Transparent;
+  background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;}
+</style>
+</html>
